@@ -1,0 +1,79 @@
+1. Hukum Newton:
+
+START
+READ and SAVE "Massa"
+READ and SAVE "Acceleration"
+READ and SAVE "Person"
+COMPUTE "Acceleration" divided by "Person"
+SAVE previous computation result as "Acceleration per Person"
+CLEAR computation
+COMPUTE "Massa" multiply by "Acceleration"
+SAVE previous computation result as "Newton"
+PRINT the "Newton"
+END
+
+
+2 Tahun Kabisat:
+
+START
+READ and SAVE "Year"
+COMPUTE "Year" modulus by "4"
+SAVE previous computation result as "Year1"
+Clear computation
+COMPUTE "Year1" modulus by "100"
+SAVE previous computation result as "Year2"
+CHECK
+	IF("Year1" = 0; "Year2" !=0;)
+	(TRUE)PRINT "Tahun Kabisat",
+	(FALSE) COMPUTE "Year"2 modulus by 400
+		SAVE Previous computation result as "Year3"
+			CHECK 
+				IF "Year3" = 0;
+				(TRUE)PRINT "Tahun Kabisat",
+				(FALSE)PRINT "Bukan Tahun Kabisat"
+END
+
+
+3. Laundry Day:
+
+START
+GET the "Total Laundry Left"
+SET the counter named "Total Laundry Inside" to 0
+CHECK
+	REPEAT(DO)
+		MOVE 1 Laundry to inside washer,
+		Substract 1 from "Total Laundry Left",
+		Add 1 to "Total Laundry Inside"
+	While(Total Laundry Left !=0);
+PRINT "Total Laundry Inside"
+END
+
+
+4. Nail Checking
+
+START
+GET the "Count Person"
+SET the "Appraisal" to 0
+EVERY "Count Person" has 10 "Finger" need to be assigned as "Good" or "Bad"
+CHECK	
+	REPEAT(DO)
+		REPEAT(DO)
+			CHECK the variables,
+			Assign "Good" if not long enough to be punished,
+			Assign "Bad" if long enough to be punished,
+			SUBSTRACT one from "Finger",
+			Add one to "Appraisal"
+		While(Finger!=0 && NO "Bad" assigned);
+		RESET Finger = 10;
+		IF(Appraisal==10)
+			(TRUE)add 1 to "Not Punished"
+			(FALSE)add 1 to "Punished"
+		RESET Appraisal to 0;
+		SUBSTRACT one from "Count Person";
+	While(Count Person !=0);
+END
+
+
+
+
+
