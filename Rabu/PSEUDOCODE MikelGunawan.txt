@@ -5,7 +5,7 @@ READ and SAVE "Massa"
 READ and SAVE "Acceleration"
 READ and SAVE "Person"
 COMPUTE "Acceleration" divided by "Person"
-SAVE previous computation result as "Acceleration per Person" (just in case will be used in the future)
+SAVE previous computation result as "Acceleration per Person"
 CLEAR computation
 COMPUTE "Massa" multiply by "Acceleration"
 SAVE previous computation result as "Newton"
@@ -23,7 +23,7 @@ Clear computation
 COMPUTE "Year1" modulus by "100"
 SAVE previous computation result as "Year2"
 CHECK
-	IF("Year1" = 0; "Year2" !=0;)
+	IF("Year1" = 0 AND "Year2" !=0;)
 	(TRUE)PRINT "Tahun Kabisat",
 	(FALSE) COMPUTE "Year"2 modulus by 400
 		SAVE Previous computation result as "Year3"
@@ -66,8 +66,8 @@ CHECK
 		While(Finger!=0 && NO "Bad" assigned);
 		RESET Finger = 10;
 		IF(Appraisal==10)
-			(TRUE)"Praise em"
-			(FALSE)"Punish em"(add 1 to "punished")
+			(TRUE)Praise it, add 1 to "Not Punished"
+			(FALSE)Punish it, add 1 to "Punished"
 		RESET Appraisal to 0;
 		SUBSTRACT one from "Count Person";
 	While(Count Person !=0);
